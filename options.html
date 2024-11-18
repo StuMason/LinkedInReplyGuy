@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LinkedIn AI Assistant Options</title>
+  <style>
+    body {
+      padding: 20px;
+      font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
+      background: #f3f2f1;
+      margin: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 32px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .logo {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .logo img {
+      width: 64px;
+      height: 64px;
+    }
+    h2 {
+      color: #0a66c2;
+      margin: 0 0 24px;
+      text-align: center;
+      font-weight: 500;
+    }
+    .form-group {
+      margin-bottom: 24px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #666;
+      font-size: 14px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      font-size: 16px;
+      transition: border-color 0.2s;
+    }
+    input[type="text"]:focus {
+      border-color: #0a66c2;
+      outline: none;
+    }
+    button {
+      background: #0a66c2;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 24px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.2s;
+    }
+    button:hover {
+      background: #004182;
+    }
+    .status {
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: 4px;
+      text-align: center;
+    }
+    .success { background: #dcf5dc; color: #0a5828; }
+    .error { background: #fce8e8; color: #c81e1e; }
+    .footer {
+      margin-top: 32px;
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+    }
+    .footer a {
+      color: #0a66c2;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="/images/icon-128.png" alt="LinkedIn AI Assistant">
+    </div>
+    <h2>LinkedIn AI Assistant Settings</h2>
+    <div class="form-group">
+      <label>OpenAI API Key:</label>
+      <input type="text" id="apiKey" placeholder="sk-...">
+    </div>
+    <button id="save">Save Settings</button>
+    <div id="status" class="status"></div>
+    <div class="footer">
+      Created by <a href="https://stuartmason.co.uk" target="_blank">Stuart Mason</a>
+    </div>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>

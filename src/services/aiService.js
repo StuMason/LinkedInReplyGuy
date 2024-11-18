@@ -2,15 +2,15 @@ class AIService {
     static API_URL = "https://api.openai.com/v1/chat/completions";
     static MODEL = "gpt-4";
   
-    static async generateResponse(text) {
+    static async generateResponse(text, style) {
       const messages = [
         {
           role: "system",
-          content: "You are LinkedInAI, a LinkedIn bot that replies to posts in a clever, engaging, and fun way. Keep responses under 200 characters."
+          content: `${style.prompt} Keep responses under 200 characters and avoid: ${PromptService.BANNED_PATTERNS.join(", ")}`
         },
         {
           role: "user",
-          content: `Write a relevant response. Avoid: ${PromptService.BANNED_PATTERNS.join(", ")}. Post: ${text}`
+          content: `Write a ${style.name} response to: ${text}`
         }
       ];
   
