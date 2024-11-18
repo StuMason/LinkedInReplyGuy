@@ -1,21 +1,35 @@
 {
     "manifest_version": 3,
-    "name": "LinkedAI",
-    "version": "1.0",
-    "description": "Help you reply using AI",
+    "name": "LinkedIn AI Comment Assistant",
+    "version": "1.0.0",
+    "description": "Generate contextual AI responses for LinkedIn posts using GPT-4",
     "icons": {
-        "48": "images/48.png"
-      },
+      "48": "images/icon-48.png",
+      "128": "images/icon-128.png"
+    },
+    "permissions": [
+      "storage"
+    ],
     "content_scripts": [
-        {
-            "js": [
-                "scripts/content.js"
-            ],
-            "matches": [
-                "https://linkedin.com/*",
-                "https://www.linkedin.com/*"
-            ],
-            "run_at": "document_end"
-        }
+      {
+        "matches": [
+          "https://linkedin.com/*",
+          "https://www.linkedin.com/*"
+        ],
+        "css": ["styles/spinner.css"],
+        "js": [
+          "src/utils/domUtils.js",
+          "src/services/promptService.js",
+          "src/services/aiService.js",
+          "src/content.js"
+        ],
+        "run_at": "document_end"
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": ["images/*"],
+        "matches": ["https://*.linkedin.com/*"]
+      }
     ]
-}
+  }
