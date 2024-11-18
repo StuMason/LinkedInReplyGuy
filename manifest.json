@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "LinkedAI",
+    "version": "1.0",
+    "description": "Help you reply using AI",
+    "icons": {
+        "48": "images/48.png"
+      },
+    "content_scripts": [
+        {
+            "js": [
+                "scripts/content.js"
+            ],
+            "matches": [
+                "https://linkedin.com/*",
+                "https://www.linkedin.com/*"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
